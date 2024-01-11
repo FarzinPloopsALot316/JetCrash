@@ -14,7 +14,7 @@ public class Raven {
     }
 
     public int getFriendship () {
-        return friendship
+        return friendship;
     }
 
     public boolean getHide () {
