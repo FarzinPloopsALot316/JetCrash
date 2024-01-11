@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class PilotPlayer {
     private int health;
-    private String[] inv;
+    private static String[] inv;
 
     public PilotPlayer (int health, String[] inv) {
         this.health = health;
@@ -18,7 +18,7 @@ public class PilotPlayer {
         return health;
     }
 
-    public String[] getInv () {
+    public static String[] getInv () {
         return inv;
     }
 
@@ -30,7 +30,7 @@ public class PilotPlayer {
         health += add;
     }
 
-    public String addItem (String item) { // add an if else statement that changes A and An based on item.
+    public static String addItem (String item) { // add an if else statement that changes A and An based on item.
         boolean success = false;
         for (int i = 0; i < inv.length; i++) {
             if (inv[i] == null) {
@@ -44,7 +44,7 @@ public class PilotPlayer {
         return "A " + item + " has been added to your inventory.";
     }
 
-    public String removeItem (String item) {
+    public static String removeItem (String item) {
         for (int i = 0; i < inv.length; i++) {
             if (inv[i] == item) {
                 inv[i] = null;
