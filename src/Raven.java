@@ -3,7 +3,7 @@ public class Raven {
     private int health;
     private boolean hide;
 
-    public Raven (int friendship) {
+    public Raven () {
         this.hide = false;
         this.health = 100;
         this.friendship = 10;

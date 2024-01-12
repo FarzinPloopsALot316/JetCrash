@@ -2,16 +2,14 @@ import java.util.Arrays;
 
 public class PilotPlayer {
     private int health;
-    private static String[] inv;
+    private static String[] inv = new String[5];
 
-    public PilotPlayer (int health, String[] inv) {
+    public PilotPlayer (int health) {
         this.health = health;
-        this.inv = inv;
     }
 
     public PilotPlayer () {
         this.health = 100;
-        this.inv = new String[2];
     }
 
     public int getHealth () {
@@ -40,8 +38,9 @@ public class PilotPlayer {
         }
         if (!success) {
             return "Your inventory is full. Please remove an item.";
+        } else {
+            return "A(n) " + item + " has been added to your inventory.";
         }
-        return "A " + item + " has been added to your inventory.";
     }
 
     public static String removeItem (String item) {
@@ -51,5 +50,16 @@ public class PilotPlayer {
             }
         }
         return "Your " + item + " has been removed from your inventory.";
+    }
+
+    public static boolean hasItem (String item) {
+        String search = "";
+        for (int i = 0; i < inv.length; i++) {
+            search = inv[i];
+            if (search.equals(item)) {
+                return true;
+            }
+        }
+        return false;
     }
 }
