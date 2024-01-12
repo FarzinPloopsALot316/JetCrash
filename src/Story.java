@@ -31,7 +31,7 @@ public class Story {
         ConsoleUtility.clearScreen();
         System.out.println("A lonely, rich girl who sits upon her castle for years, looking about the horizon, feels a great sense of solitude, yearning to see her father.");
         System.out.println("She is the daughter of a rich father who owns a flourishing fashion business, but her father has no business with the likes of her. ");
-        System.out.println("For more than 19 years, she lived in a lonely castle her father had built to keep her away, with butlers and maids only to comfort her company.");
+        System.out.println("For more than 19 years, she lived        in a lonely castle her father had built to keep her away, with butlers and maids only to comfort her company.");
         System.out.println("But one day, her father calls her, telling her that his time is coming, and that it is about time the company be led by a newer generation.");
         System.out.println("Eagerly excited, more so to see him than to claim heir to the company, she agrees to come over. She is informed that a pilot has been hired for her, and to go to the air base to meet him.");
         wait(10);
