@@ -29,5 +29,11 @@ public class Raven {
         health += add;
     }
 
+    public void loseFriendship (int loss) {
+        friendship -= loss;
+    }
 
+    public void addFriendship (int add) {
+        friendship += add;
+    }
 }
