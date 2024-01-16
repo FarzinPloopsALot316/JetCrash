@@ -2,6 +2,7 @@ import java.util.Scanner;
 public class Story {
     public PilotPlayer pilot = new PilotPlayer();
     public Raven Raven = new Raven();
+    public Terrain island = new Terrain();
 
     public Story () {}
 
@@ -64,14 +65,43 @@ public class Story {
         waitADangSecond();
         System.out.println("Worry filled her eyes as she looked into the vast horizons, the view of the Atlantic surrounding them not helping her panicked state.");
         System.out.println("a. \"Listen, I know it's scary, but I promise I will do everything in my will to make sure you survive this in one piece. But we'll need to trust each other.\"");
-        System.out.print("b. \"We gotta hurry and find some resources. The sun looks close to setting. Come on madam. ");
+        System.out.print("b. \"We gotta hurry and find some resources. The sun looks close to setting. Come on madam.\" ");
         userInput = scan.nextLine();
         waitADangSecond();
         if (userInput.equals("a")) {
-            Raven.addFriendship(5);
+            Raven.addFriendship(10);
             System.out.println("\"O-okay I trust you. Let's uhm, go look for some resources.\" She was still scared, but her faith had increased in you.");
         } else {
             System.out.println("\"Uhmm, okay, I'll be right behind you..\"");
         }
+        wait(3);
+        ConsoleUtility.clearScreen();
+        PilotPlayer.addItem("pocket knife");
+        System.out.println("Your Current Health: " + pilot.getHealth());
+        System.out.println("Raven's Current Health: " + Raven.getRHealth());
+        System.out.println("Current Inv: " + PilotPlayer.getInv());
+        System.out.println("-");
+        System.out.println("The two of you wander into the forest, and you both look around. After a few minutes of searched the tropical vast, you spot a fruit tree.");
+        System.out.println("It bore nutritious berries that could help sustain you or Raven's hunger. You pluck a few, and Raven's eyes sparkle with relief.");
+        System.out.println("But there's only enough for the either one of you, not both. You could also choose to store the berries for later.");
+        System.out.println("Your body was heavily damaged from the plane crash");
+        System.out.println("a. Look her straight in the eyes and eat the berries. \"I'm sorry, I need it.\"");
+        System.out.println("b. Give her the berries.");
+        System.out.println("c. Store the berries. \"Look, we gotta keep this for later, it may come into handy. Let's not use it up right now.");
+        userInput = scan.nextLine();
+        if (userInput.equals("a")) {
+            Raven.loseFriendship(5);
+            pilot.addHealth(15);
+            System.out.println("\"I- But- oh okay-\"");
+        } else if (userInput.equals("b")) {
+            Raven.addFriendship(5);
+            System.out.println("\"Oh my goodness!! Thank you so much, I was starving!\"");
+            System.out.println("She devours the berries in a near gulp. \"These berries are amazing!\"");
+            System.out.println("Your body was still in pain, and suffers a bit of damage from hunger, but you were happy to help her.");
+            pilot.loseHealth(10);
+        } else if (userInput.equals("c")) {
+            System.out.println("\"Oh I see, no worries then! Let's store it for later!\"");
+        }
+        island.randomItemFound();
     }
 }

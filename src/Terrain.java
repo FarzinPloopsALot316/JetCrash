@@ -6,10 +6,7 @@ public class Terrain {
         if (chanceItem <= 3) {
             PilotPlayer.addItem("gun");
         } else if (chanceItem > 3 && chanceItem <= 7) {
-            PilotPlayer.addItem("knife");
-        } else if (chanceItem > 7 && chanceItem <= 15) {
-            PilotPlayer.addItem("shotgun"); //can only be used for hunting
-        }
+            PilotPlayer.addItem("shotgun");
     }
 
     public String hunt () {

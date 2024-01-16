@@ -9,7 +9,7 @@ public class PilotPlayer {
     }
 
     public PilotPlayer () {
-        this.health = 100;
+        this.health = 70; //max 100
     }
 
     public int getHealth () {
@@ -25,7 +25,9 @@ public class PilotPlayer {
     }
 
     public void addHealth (int add) {
-        health += add;
+        if (health + add <= 100) {
+            health += add;
+        }
     }
 
     public static String addItem (String item) { // add an if else statement that changes A and An based on item.

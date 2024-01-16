@@ -5,7 +5,7 @@ public class Raven {
 
     public Raven () {
         this.hide = false;
-        this.health = 100;
+        this.health = 60;
         this.friendship = 10;
     }
 
