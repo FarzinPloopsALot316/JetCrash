@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class Story {
-    public PilotPlayer pilot = new PilotPlayer();
-    public Raven Raven = new Raven();
+    public PilotPlayer pilot = new PilotPlayer(70);
+    public Raven Raven = new Raven(60);
     public Terrain island = new Terrain();
 
     public Story () {}
@@ -81,13 +81,13 @@ public class Story {
         System.out.println("Raven's Current Health: " + Raven.getRHealth());
         System.out.println("Current Inv: " + PilotPlayer.getInv());
         System.out.println("-");
-        System.out.println("The two of you wander into the forest, and you both look around. After a few minutes of searched the tropical vast, you spot a fruit tree.");
+        System.out.println("The two of you wander into the forest, and you both look around. After a few minutes of searching the tropical vast, you spot a fruit tree.");
         System.out.println("It bore nutritious berries that could help sustain you or Raven's hunger. You pluck a few, and Raven's eyes sparkle with relief.");
         System.out.println("But there's only enough for the either one of you, not both. You could also choose to store the berries for later.");
         System.out.println("Your body was heavily damaged from the plane crash");
         System.out.println("a. Look her straight in the eyes and eat the berries. \"I'm sorry, I need it.\"");
         System.out.println("b. Give her the berries.");
-        System.out.println("c. Store the berries. \"Look, we gotta keep this for later, it may come into handy. Let's not use it up right now.");
+        System.out.print("c. Store the berries. \"Look, we gotta keep this for later, it may come into handy. Let's not use it up right now.");
         userInput = scan.nextLine();
         if (userInput.equals("a")) {
             Raven.loseFriendship(5);
@@ -103,5 +103,21 @@ public class Story {
             System.out.println("\"Oh I see, no worries then! Let's store it for later!\"");
         }
         island.randomItemFound();
+        System.out.println("Suddenly, a rustling could be heard in the bushes.");
+        System.out.println("You and Raven widen your eyes in shock as you see a giant bear emerge, ready to pounce upon attack. What do you do?");
+        System.out.println("a. Try to fight the bear.");
+        System.out.print("b. Take Raven and run.");
+        if (PilotPlayer.hasItem("gun") && PilotPlayer.hasItem("shotgun")) {
+            System.out.print("\nc. Try firing at the bear.");
+        }
+        userInput = scan.nextLine();
+        if (userInput.equals("c") && (PilotPlayer.hasItem("gun") || PilotPlayer.hasItem("shotgun"))) {
+            int success = (int) (Math.random() * 3);
+            if (success >= 2) {
+                System.out.println(PilotPlayer.addItem("bear meat"));
+                System.out.println(PilotPlayer.addItem("bear skin"));
+                System.out.println("The bear has been successfully killed with a shot!");
+            }
+        }
     }
 }

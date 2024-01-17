@@ -9,6 +9,12 @@ public class Raven {
         this.friendship = 10;
     }
 
+    public Raven (int health) {
+        this.hide = false;
+        this.health = health;
+        this.friendship = 10;
+    }
+
     public int getRHealth () {
         return health;
     }
