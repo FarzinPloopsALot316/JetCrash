@@ -105,6 +105,7 @@ public class Story {
         island.randomItemFound();
         System.out.println("Suddenly, a rustling could be heard in the bushes.");
         System.out.println("You and Raven widen your eyes in shock as you see a giant bear emerge, ready to pounce upon attack. What do you do?");
+        System.out.println("Current Inv: " + PilotPlayer.getInv());
         System.out.println("a. Try to fight the bear.");
         System.out.print("b. Take Raven and run.");
         if (PilotPlayer.hasItem("gun") && PilotPlayer.hasItem("shotgun")) {
@@ -115,9 +116,23 @@ public class Story {
             int success = (int) (Math.random() * 3);
             if (success >= 2) {
                 System.out.println(PilotPlayer.addItem("bear meat"));
-                System.out.println(PilotPlayer.addItem("bear skin"));
                 System.out.println("The bear has been successfully killed with a shot!");
+            } else {
+                System.out.println("You missed!");
+                int RavenHit = (int) (Math.random() * 3);
+                if (RavenHit == 1) {
+                    Raven.ravenLoseHealth(30);
+                    System.out.println("\"AAAAA! OWWWW!\" Raven screams as the bear slashes at her, costing her 30 health.");
+                } else {
+                    pilot.loseHealth(20);
+                    System.out.println("The bear pinned you down, swiping at you with it's claws!");
+                    System.out.println("You lost 20 health!");
+                }
+                System.out.println("The bear roars, taking off into the wilderness.");
             }
+        } else if (userInput.equals("a")) {
+            System.out.println("You attack the bear.");
+            int success = (int) (Math.random() * 3);
         }
     }
 }
