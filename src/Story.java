@@ -76,7 +76,8 @@ public class Story {
         }
         wait(3);
         ConsoleUtility.clearScreen();
-        while (pilot.getHealth() > 0 && Raven.getRHealth() > 0) {
+        boolean cleared = false;
+        while (pilot.getHealth() > 0 && Raven.getRHealth() > 0 && !cleared) {
             PilotPlayer.addItem("pocket knife");
             System.out.println("Your Current Health: " + pilot.getHealth());
             System.out.println("Raven's Current Health: " + Raven.getRHealth());
@@ -162,18 +163,22 @@ public class Story {
             wait2seconds();
             System.out.println("When you two found a cave, you stay there, trying to catch your breath from the bear.");
             System.out.println("You decide to situate yourselves there for now.");
+            cleared = true;
         } // while code's semicolon
+        System.out.println("~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
         wait2seconds();
         System.out.println("PART 1 COMPLETED.");
         System.out.println("SAVING GAME...");
         wait2seconds();
         System.out.println("File saved. Starting next part..");
+        cleared = false;
         ConsoleUtility.clearScreen();
-        while (pilot.getHealth() > 0 && Raven.getRHealth() > 0) {
+        while (pilot.getHealth() > 0 && Raven.getRHealth() > 0 && !cleared) {
             System.out.println("Your Current Health: " + pilot.getHealth());
             System.out.println("Raven's Current Health: " + Raven.getRHealth());
             System.out.println("Current Inv: " + PilotPlayer.getInv());
             System.out.println("You two decide to stay in the cave for at least a week. You kept Raven company as you worked on trying to repair the GPS you found from the plane wreck.");
+            waitADangSecond();
             System.out.println("She looks at you sighing, her eyes swell with sorrow as she eyed the remnants you collected from the plane crash.");
             System.out.println("\"You know... I never really had parents to love. I never had friends, always isolated in my castle.\"");
             waitADangSecond();
@@ -190,6 +195,8 @@ public class Story {
                 System.out.println("As you held her hand, you smiled sweetly, and you suddenly felt just a little better in all this havoc.");
                 pilot.addHealth(5);
             }
+
+            cleared = true;
         } // while code's semicolon
     }
 }
