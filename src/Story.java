@@ -185,7 +185,7 @@ public class Story {
             System.out.println("\"I kinda like this better than being in that damned castle.\" she mumbled.");
             System.out.println("She looks at you, noting your professional silence. \"How come you're working so hard to help me? I admire it.\"");
             System.out.println("a. \"Just doing my job, madam. Is all.\" Go back to working on the GPS.");
-            System.out.println("b. Smile at her to comfort her. \"I'm not really here for the money, just here to help out whoever needs that help. I like being true to my duty, Madam.\"");
+            System.out.print("b. Smile at her to comfort her. \"I'm not really here for the money, just here to help out whoever needs that help. I like being true to my duty, Madam.\"");
             userInput = scan.nextLine();
             if (userInput == "a") {
                 System.out.println("\"I see, I see..\" she responds.");
@@ -195,7 +195,36 @@ public class Story {
                 System.out.println("As you held her hand, you smiled sweetly, and you suddenly felt just a little better in all this havoc.");
                 pilot.addHealth(5);
             }
+            System.out.println("a. \"So, how come you're all alone?\"");
+            System.out.print("b. Continue to work on the GPS in silence.");
+            userInput = scan.nextLine();
+            if (userInput == "a") {
+                System.out.println("Do you really wanna know me?");
+                System.out.println("a. \"Yeah sure, why not?\"");
+                System.out.print("b. \"Nah, not right now.\"");
+                userInput = scan.nextLine();
+                if (userInput == "a") {
+                    System.out.println("Alright, well...");
+                    System.out.println("\"You know, I used to have a mom. Well, I mean duh, everybody does!\" she chuckled.");
+                    System.out.println("\"My father, who owns a rich fashion business, married her long ago. But then, after realizing she gave birth to a daughter..\" She sighs.");
+                    waitADangSecond();
+                    System.out.println("\"He left us. My mother soon died of an illness, and he didn't even visit then. Too focused on his company to send worry our way.\"");
+                    waitADangSecond();
+                    System.out.println("\"He paid for the castle I stayed in in order to keep me away from him, so that he could focus on his company instead of family.\"");
+                    System.out.println("\"For years, I sat behind solemn stone walls which radiated nothing but intolerable solitude and grieving silence.\"");
+                    System.out.println("\"with nothing but butlers and maids to keep me company, none of whom would even tell me why I was trapped here.\" Raven looked at you as she continued.");
+                    System.out.println("\"He finally called me over a week ago to come to America, to discuss plans about the future owner of the company.\"");
+                    waitADangSecond();
+                    System.out.println("\"I just want to see him.. I couldn't care less about the company which kept me in stone shackles my whole childhood.\"");
+                    waitADangSecond();
+                    System.out.println("\"I want to be a daughter, not just a business heir.\"");
+                    System.out.println("\"Well, I guess that's about it for me.\"")
+                    waitADangSecond();
 
+                } else {
+                    System.out.println("\"Alright,\" she nodded.");
+                }
+            }
             cleared = true;
         } // while code's semicolon
     }
