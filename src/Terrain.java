@@ -3,7 +3,7 @@ public class Terrain {
     }
 
     public void randomItemFound() {
-        int chanceItem = (int) ((Math.random() * 30) * 1);
+        int chanceItem = (int) ((Math.random() * 20) * 1);
         if (chanceItem <= 3) {
             System.out.println(PilotPlayer.addItem("gun"));
         } else if (chanceItem > 3 && chanceItem <= 7) {

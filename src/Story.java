@@ -76,63 +76,109 @@ public class Story {
         }
         wait(3);
         ConsoleUtility.clearScreen();
-        PilotPlayer.addItem("pocket knife");
-        System.out.println("Your Current Health: " + pilot.getHealth());
-        System.out.println("Raven's Current Health: " + Raven.getRHealth());
-        System.out.println("Current Inv: " + PilotPlayer.getInv());
-        System.out.println("-");
-        System.out.println("The two of you wander into the forest, and you both look around. After a few minutes of searching the tropical vast, you spot a fruit tree.");
-        System.out.println("It bore nutritious berries that could help sustain you or Raven's hunger. You pluck a few, and Raven's eyes sparkle with relief.");
-        System.out.println("But there's only enough for the either one of you, not both. You could also choose to store the berries for later.");
-        System.out.println("Your body was heavily damaged from the plane crash");
-        System.out.println("a. Look her straight in the eyes and eat the berries. \"I'm sorry, I need it.\"");
-        System.out.println("b. Give her the berries.");
-        System.out.print("c. Store the berries. \"Look, we gotta keep this for later, it may come into handy. Let's not use it up right now.");
-        userInput = scan.nextLine();
-        if (userInput.equals("a")) {
-            Raven.loseFriendship(5);
-            pilot.addHealth(15);
-            System.out.println("\"I- But- oh okay-\"");
-        } else if (userInput.equals("b")) {
-            Raven.addFriendship(5);
-            System.out.println("\"Oh my goodness!! Thank you so much, I was starving!\"");
-            System.out.println("She devours the berries in a near gulp. \"These berries are amazing!\"");
-            System.out.println("Your body was still in pain, and suffers a bit of damage from hunger, but you were happy to help her.");
-            pilot.loseHealth(10);
-        } else if (userInput.equals("c")) {
-            System.out.println("\"Oh I see, no worries then! Let's store it for later!\"");
-        }
-        island.randomItemFound();
-        System.out.println("Suddenly, a rustling could be heard in the bushes.");
-        System.out.println("You and Raven widen your eyes in shock as you see a giant bear emerge, ready to pounce upon attack. What do you do?");
-        System.out.println("Current Inv: " + PilotPlayer.getInv());
-        System.out.println("a. Try to fight the bear.");
-        System.out.print("b. Take Raven and run.");
-        if (PilotPlayer.hasItem("gun") && PilotPlayer.hasItem("shotgun")) {
-            System.out.print("\nc. Try firing at the bear.");
-        }
-        userInput = scan.nextLine();
-        if (userInput.equals("c") && (PilotPlayer.hasItem("gun") || PilotPlayer.hasItem("shotgun"))) {
-            int success = (int) (Math.random() * 3);
-            if (success >= 2) {
-                System.out.println(PilotPlayer.addItem("bear meat"));
-                System.out.println("The bear has been successfully killed with a shot!");
-            } else {
-                System.out.println("You missed!");
-                int RavenHit = (int) (Math.random() * 3);
-                if (RavenHit == 1) {
-                    Raven.ravenLoseHealth(30);
-                    System.out.println("\"AAAAA! OWWWW!\" Raven screams as the bear slashes at her, costing her 30 health.");
-                } else {
-                    pilot.loseHealth(20);
-                    System.out.println("The bear pinned you down, swiping at you with it's claws!");
-                    System.out.println("You lost 20 health!");
-                }
-                System.out.println("The bear roars, taking off into the wilderness.");
+        while (pilot.getHealth() > 0 && Raven.getRHealth() > 0) {
+            PilotPlayer.addItem("pocket knife");
+            System.out.println("Your Current Health: " + pilot.getHealth());
+            System.out.println("Raven's Current Health: " + Raven.getRHealth());
+            System.out.println("Current Inv: " + PilotPlayer.getInv());
+            System.out.println("-");
+            System.out.println("The two of you wander into the forest, and you both look around. After a few minutes of searching the tropical vast, you spot a fruit tree.");
+            System.out.println("It bore nutritious berries that could help sustain you or Raven's hunger. You pluck a few, and Raven's eyes sparkle with relief.");
+            System.out.println("But there's only enough for the either one of you, not both. You could also choose to store the berries for later.");
+            System.out.println("Your body was heavily damaged from the plane crash");
+            System.out.println("a. Look her straight in the eyes and eat the berries. \"I'm sorry, I need it.\"");
+            System.out.println("b. Give her the berries.");
+            System.out.print("c. Store the berries. \"Look, we gotta keep this for later, it may come into handy. Let's not use it up right now.");
+            userInput = scan.nextLine();
+            if (userInput.equals("a")) {
+                Raven.loseFriendship(5);
+                pilot.addHealth(15);
+                System.out.println("\"I- But- oh okay-\"");
+            } else if (userInput.equals("b")) {
+                Raven.addFriendship(5);
+                System.out.println("\"Oh my goodness!! Thank you so much, I was starving!\"");
+                System.out.println("She devours the berries in a near gulp. \"These berries are amazing!\"");
+                System.out.println("Your body was still in pain, and suffers a bit of damage from hunger, but you were happy to help her.");
+                pilot.loseHealth(10);
+            } else if (userInput.equals("c")) {
+                System.out.println("\"Oh I see, no worries then! Let's store it for later!\"");
             }
-        } else if (userInput.equals("a")) {
-            System.out.println("You attack the bear.");
-            int success = (int) (Math.random() * 3);
-        }
+            System.out.println("Suddenly, a rustling could be heard in the bushes.");
+            System.out.println("You and Raven widen your eyes in shock as you see a giant bear emerge, ready to pounce upon attack. What do you do?");
+            System.out.println("Current Inv: " + PilotPlayer.getInv());
+            System.out.println("a. Try to fight the bear.");
+            System.out.print("b. Take Raven and run.");
+            if (PilotPlayer.hasItem("gun") || PilotPlayer.hasItem("shotgun")) {
+                System.out.print("\nc. Try firing at the bear.");
+            }
+            userInput = scan.nextLine();
+            if (userInput.equals("c") && (PilotPlayer.hasItem("gun") || PilotPlayer.hasItem("shotgun"))) {
+                int success = (int) (Math.random() * 3);
+                if (success >= 2) {
+                    System.out.println(PilotPlayer.addItem("bear meat"));
+                    System.out.println("The bear has been successfully killed with a shot!");
+                } else {
+                    System.out.println("You missed!");
+                    int RavenHit = (int) (Math.random() * 3);
+                    if (RavenHit == 1) {
+                        Raven.ravenLoseHealth(30);
+                        System.out.println("\"AAAAA! OWWWW!\" Raven screams as the bear slashes at her, costing her 30 health.");
+                    } else {
+                        pilot.loseHealth(20);
+                        System.out.println("The bear pinned you down, swiping at you with it's claws!");
+                        System.out.println("You lost 20 health!");
+                    }
+                    System.out.println("The bear roars, taking off into the wilderness.");
+                }
+            } else if (userInput.equals("a")) {
+                System.out.println("You attack the bear.");
+                int success = (int) (Math.random() * 3);
+                if (success == 1) {
+                    System.out.println("You successfully wade the bear off, and it runs away into the wildnerness, leaving the both of you unharmed.");
+                } else if (success == 2) {
+                    pilot.loseHealth(20);
+                    System.out.println("The bear strikes at you, costing you 20 damage!");
+                    System.out.println("It then dashes off into the wilderness, leaving you harmed, but at least Raven was untouched.");
+                } else {
+                    Raven.ravenLoseHealth(30);
+                    System.out.println("Raven gets hurt by 30 health as the bear pounces at her, slashing her skin. You pry the bear off, using your pocket knife to stab it.");
+                    System.out.println("The bear roars, taking off into the wilderness, leaving Raven severely hurt.");
+                }
+            } else {
+                System.out.println("You and Raven decide to run away for your life, and not mess around with the beast!");
+                System.out.println("The bear chases after you two, gaining pace.");
+                int uhOh = (int) (Math.random() * 3);
+                if (uhOh == 1) {
+                    pilot.loseHealth(10);
+                    Raven.ravenLoseHealth(10);
+                    System.out.println("You both intake a damage of 10 as the bear catches up and slahes you both! You manage to pry the bear off you two with your pocket knife.");
+                    System.out.println("You jump into a cave with Raven, the bear growling as it cannot reach you anymore");
+                    System.out.println("It takes off into the wilderness, leaving you both harmed.");
+                } else {
+                    System.out.println("You spot a cave, and quickly jump into there, as the bear runs past not noticing.");
+                    System.out.println("You have successfully escaped the bear.");
+                }
+            }
+            wait2seconds();
+            System.out.println("When you two found a cave, you stay there, trying to catch your breath from the bear.");
+            System.out.println("You decide to situate yourselves there for now.");
+        } // while code's semicolon
+        wait2seconds();
+        System.out.println("PART 1 COMPLETED.");
+        System.out.println("SAVING GAME...");
+        wait2seconds();
+        System.out.println("File saved. Starting next part..");
+        ConsoleUtility.clearScreen();
+        while (pilot.getHealth() > 0 && Raven.getRHealth() > 0) {
+            System.out.println("You two decide to stay in the cave for at least a week. You kept Raven company as you worked on trying to repair the GPS you found from the plane wreck.");
+            System.out.println("She looks at you sighing, her eyes swell with sorrow as she eyed the remnants you collected from the plane crash.");
+            System.out.println("\"You know... I never really had parents to love. I never had friends, always isolated in my castle.\"");
+            waitADangSecond();
+            System.out.println("\"I kinda like this better than being in that damned castle.\" she mumbled.");
+            System.out.println("She looks at you, noting your professional silence. \"How come you're working so hard to help me? I admire it.\"");
+            System.out.println("a. \"Just doing my job, madam. Is all.\" Go back to working on the GPS.");
+            System.out.println("b. Smile at her to comfort her. \"I'm not really here for the money, just here to help out whoever needs that help. I like being true to my duty, Madam.\"");
+            userInput = scan.nextLine();
+        } // while code's semicolon
     }
 }
