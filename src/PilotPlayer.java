@@ -49,7 +49,7 @@ public class PilotPlayer {
     public static String addItem (String item) {
         for (int i = 0; i < inv.length; i++) {
             if (inv[i].equals(item)) {
-                return "Your inventory already contains the item.";
+                return "Your inventory already contains this item. Therefore, you toss it away.";
             }
         }
         for (int i = 0; i < inv.length; i++) {
@@ -58,7 +58,7 @@ public class PilotPlayer {
                 return "A(n) " + item + " had been added to your inventory.";
             }
         }
-        return "Your inventory is full.";
+        return "Your inventory is full, and so the item was tossed away.";
     }
 
     public static String removeItem (String item) {

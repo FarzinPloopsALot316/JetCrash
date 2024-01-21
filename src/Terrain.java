@@ -3,11 +3,13 @@ public class Terrain {
     }
 
     public void randomItemFound() {
-        int chanceItem = (int) ((Math.random() * 20) * 1);
+        int chanceItem = (int) ((Math.random() * 15) * 1);
         if (chanceItem <= 3) {
             System.out.println(PilotPlayer.addItem("gun"));
         } else if (chanceItem > 3 && chanceItem <= 7) {
             System.out.println(PilotPlayer.addItem("shotgun"));
+        } else {
+            System.out.println("You found nothing.");
         }
     }
 
@@ -15,7 +17,8 @@ public class Terrain {
         if (PilotPlayer.hasItem("shotgun")) {
             int animal = (int) ((Math.random() * 15) * 1);
             if (animal <= 5) {
-                return "You have found a deer, and successfully shot it. Would you like to feed yourself or feed Raven?";
+                System.out.println(PilotPlayer.addItem("deer meat"));
+                return "You have found a deer, and successfully shot it.";
             } else {
                 return "You found nothing.";
             }

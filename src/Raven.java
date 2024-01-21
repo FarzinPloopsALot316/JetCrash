@@ -27,6 +27,10 @@ public class Raven {
         return hide;
     }
 
+    public void setHide () {
+        hide = true;
+    }
+
     public void ravenLoseHealth (int loss) {
         health -= loss;
     }
