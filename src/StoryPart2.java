@@ -98,11 +98,52 @@ public class StoryPart2 {
                     pilot2.addHealth(10);
                     wait2seconds();
                     System.out.println(PilotPlayer.removeItem("berries"));
+                    System.out.println("Current Inv: " + PilotPlayer.getInv());
                 } else {
                     System.out.println("Raven smiles in joy, gaining 10 health upon consumption.");
                     raven2.ravenAddHealth(10);
                     wait2seconds();
                     System.out.println(PilotPlayer.removeItem("berries"));
+                    System.out.println("Current Inv: " + PilotPlayer.getInv());
+                }
+            }
+            if (PilotPlayer.hasItem("bear meat") || PilotPlayer.hasItem("deer meat")) { //meat gives 15 each
+                System.out.println("You had meat from before, and figured to use them before they went rotten.");
+                if (PilotPlayer.hasItem("bear meat")) {
+                    System.out.println("a. Feed yourself the bear meat.");
+                    System.out.print("b. Feed Raven the bear meat.");
+                    userInput = scan.nextLine();
+                    if (userInput.equals("a")) {
+                        System.out.println("You gain 15 health upon consumption.");
+                        pilot2.addHealth(15);
+                        wait2seconds();
+                        System.out.println(PilotPlayer.removeItem("bear meat"));
+                        System.out.println("Current Inv: " + PilotPlayer.getInv());
+                    } else {
+                        System.out.println("Raven smiles in joy, gaining 15 health upon consumption.");
+                        raven2.ravenAddHealth(15);
+                        wait2seconds();
+                        System.out.println(PilotPlayer.removeItem("bear meat"));
+                        System.out.println("Current Inv: " + PilotPlayer.getInv());
+                    }
+                }
+                if (PilotPlayer.hasItem("deer meat")) {
+                    System.out.println("a. Feed yourself the deer meat.");
+                    System.out.print("b. Feed Raven the deer meat.");
+                    userInput = scan.nextLine();
+                    if (userInput.equals("a")) {
+                        System.out.println("You gain 15 health upon consumption.");
+                        pilot2.addHealth(15);
+                        wait2seconds();
+                        System.out.println(PilotPlayer.removeItem("deer meat"));
+                        System.out.println("Current Inv: " + PilotPlayer.getInv());
+                    } else {
+                        System.out.println("Raven smiles in joy, gaining 15 health upon consumption.");
+                        raven2.ravenAddHealth(15);
+                        wait2seconds();
+                        System.out.println(PilotPlayer.removeItem("deer meat"));
+                        System.out.println("Current Inv: " + PilotPlayer.getInv());
+                    }
                 }
             }
             cleared = true;
