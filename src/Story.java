@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class Story {
     public PilotPlayer pilot = new PilotPlayer(70);
-    public Raven Raven = new Raven(60);
+    public Raven raven = new Raven(60);
     public Terrain island = new Terrain();
 
     public Story () {}
@@ -54,7 +54,7 @@ public class Story {
         System.out.println("~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
         wait(8);
         System.out.println("Your Current Health: " + pilot.getHealth());
-        System.out.println("Raven's Current Health: " + Raven.getRHealth());
+        System.out.println("Raven's Current Health: " + raven.getRHealth());
         System.out.println("-");
         waitADangSecond();
         System.out.println("\"Oh no, where are we?!\" Raven exclaims. ");
@@ -69,7 +69,7 @@ public class Story {
         userInput = scan.nextLine();
         waitADangSecond();
         if (userInput.equals("a")) {
-            Raven.addFriendship(10);
+            raven.addFriendship(10);
             System.out.println("\"O-okay I trust you. Let's uhm, go look for some resources.\" She was still scared, but her faith had increased in you.");
         } else {
             System.out.println("\"Uhmm, okay, I'll be right behind you..\"");
@@ -77,10 +77,10 @@ public class Story {
         wait(3);
         ConsoleUtility.clearScreen();
         boolean cleared = false;
-        while (pilot.getHealth() > 0 && Raven.getRHealth() > 0 && !cleared) {
+        while (pilot.getHealth() > 0 && raven.getRHealth() > 0 && !cleared) {
             PilotPlayer.addItem("pocket knife");
             System.out.println("Your Current Health: " + pilot.getHealth());
-            System.out.println("Raven's Current Health: " + Raven.getRHealth());
+            System.out.println("Raven's Current Health: " + raven.getRHealth());
             System.out.println("You searched the premises.");
             wait2seconds();
             island.randomItemFound();
@@ -96,13 +96,13 @@ public class Story {
             System.out.print("c. Store the berries. \"Look, we gotta keep this for later, it may come into handy. Let's not use it up right now.");
             userInput = scan.nextLine();
             if (userInput.equals("a")) {
-                Raven.loseFriendship(5);
-                pilot.addHealth(15);
+                raven.loseFriendship(5);
+                pilot.addHealth(20);
                 System.out.println("\"I- But- oh okay-\"");
                 wait2seconds();
-                System.out.println("You gain 15 health.");
+                System.out.println("You gain 20 health.");
             } else if (userInput.equals("b")) {
-                Raven.addFriendship(5);
+                raven.addFriendship(5);
                 System.out.println("\"Oh my goodness!! Thank you so much, I was starving!\"");
                 System.out.println("She devours the berries in a near gulp. \"These berries are amazing!\"");
                 wait2seconds();
@@ -133,7 +133,7 @@ public class Story {
                     System.out.println("You missed!");
                     int RavenHit = (int) (Math.random() * 3);
                     if (RavenHit == 1) {
-                        Raven.ravenLoseHealth(30);
+                        raven.ravenLoseHealth(30);
                         System.out.println("\"AAAAA! OWWWW!\" Raven screams as the bear slashes at her, costing her 30 health.");
                     } else {
                         pilot.loseHealth(20);
@@ -152,7 +152,7 @@ public class Story {
                     System.out.println("The bear strikes at you, costing you 20 damage!");
                     System.out.println("It then dashes off into the wilderness, leaving you harmed, but at least Raven was untouched.");
                 } else {
-                    Raven.ravenLoseHealth(30);
+                    raven.ravenLoseHealth(30);
                     System.out.println("\"AAAAA! OWWWW!\" Raven screams");
                     System.out.println("Raven gets damaged by 30 as the bear pounces at her, slashing her skin. You pry the bear off, using your pocket knife to stab it.");
                     System.out.println("The bear roars, taking off into the wilderness, leaving Raven severely hurt.");
@@ -163,7 +163,7 @@ public class Story {
                 int uhOh = (int) (Math.random() * 3);
                 if (uhOh == 1) {
                     pilot.loseHealth(10);
-                    Raven.ravenLoseHealth(10);
+                    raven.ravenLoseHealth(10);
                     System.out.println("You both intake a damage of 10 as the bear catches up and slashes you both! You manage to pry the bear off you two with your pocket knife.");
                     System.out.println("You jump into a cave with Raven, the bear growling as it cannot reach you anymore");
                     System.out.println("It takes off into the wilderness, leaving you both harmed.");
@@ -180,6 +180,10 @@ public class Story {
         System.out.println("~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
         wait2seconds();
         System.out.println("PART 1 COMPLETED.");
+        System.out.println("Your Current Health: " + pilot.getHealth());
+        System.out.println("Raven's Current Health: " + raven.getRHealth());
+        System.out.println("Current Inv: " + PilotPlayer.getInv());
+        wait(4);
         System.out.println("Play next part? \"yes\" to continue.");
         System.out.println("You can also try hunting (requires shotgun) to get deer meat, which recovers health. Press q to do so.");
         userInput = scan.nextLine();
@@ -202,12 +206,13 @@ public class Story {
         wait2seconds();
         cleared = false;
         ConsoleUtility.clearScreen();
-        while (pilot.getHealth() > 0 && Raven.getRHealth() > 0 && !cleared) {
+        while (pilot.getHealth() > 0 && raven.getRHealth() > 0 && !cleared) {
             System.out.println("Your Current Health: " + pilot.getHealth());
-            System.out.println("Raven's Current Health: " + Raven.getRHealth());
+            System.out.println("Raven's Current Health: " + raven.getRHealth());
             System.out.println("Current Inv: " + PilotPlayer.getInv());
             System.out.println("You two decide to stay in the cave for at least a week. You kept Raven company as you worked on trying to repair the GPS you found from the plane wreck.");
-            waitADangSecond();
+            wait(4);
+            System.out.println("~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
             System.out.println("She looks at you sighing, her eyes swell with sorrow as she eyed the remnants you collected from the plane crash.");
             System.out.println("\"You know... I never really had parents to love. I never had friends, always isolated in my castle.\"");
             waitADangSecond();
@@ -216,10 +221,10 @@ public class Story {
             System.out.println("a. \"Just doing my job, madam. Is all.\" Go back to working on the GPS.");
             System.out.print("b. Smile at her to comfort her. \"I'm not really here for the money, just here to help out whoever needs that help. I like being true to my duty, Madam.\"");
             userInput = scan.nextLine();
-            if (userInput == "a") {
+            if (userInput.equals("a")) {
                 System.out.println("\"I see, I see..\" she responds.");
             } else {
-                Raven.addFriendship(10);
+                raven.addFriendship(10);
                 System.out.println("\"That's.. really sweet.\" She smiled, holding your hand.");
                 System.out.println("As you held her hand, you smiled sweetly, and you suddenly felt just a little better in all this havoc.");
                 pilot.addHealth(5);
@@ -269,11 +274,12 @@ public class Story {
                     System.out.println("You stored them for later.");
                 } else if (userInput.equals("b")) {
                     System.out.println("You handed Raven the berries, and she happily ate them, recovering 10 health. Her trust increased in you as well.");
-                    Raven.addFriendship(5);
-                    Raven.ravenAddHealth(10);
-                    PilotPlayer.removeItem("berries");
+                    raven.addFriendship(5);
+                    raven.ravenAddHealth(10);
+                    System.out.println(PilotPlayer.removeItem("berries"));
                 } else if (userInput.equals("c")) {
                     System.out.println("You ate the berries and recover 10 health.");
+                    System.out.println(PilotPlayer.removeItem("berries"));
                 }
             }
             System.out.println("-");
@@ -309,28 +315,31 @@ public class Story {
                 wait2seconds();
                 System.out.println("Ash noted you lowering your guard, and nodded. \"Name's Ash, 19 years old. I dwell in these woods humbly.\"");
                 System.out.println("Well..");
-                wait2seconds();
+                wait(5);
+                System.out.println("-");
             } else {
                 wait2seconds();
                 if (PilotPlayer.hasItem("gun")) {
                     System.out.println("He looked into the barrel of your pistol, noting the rim of the bullet inside cocked and ready to fire. He gulped");
                     System.out.println("\"I's just.. I- Please I ain't.. I'm justa' humble dwella' in here's woods, spare mercy!\"");
-                    Raven.loseFriendship(10);
+                    raven.loseFriendship(10);
                     wait2seconds();
                     System.out.println("\"Lower your gun! Can't you see he's already helpless?\" Raven looks at you with concern. You lower your gun.");
                     System.out.println("Her faith in your actions dwindle a bit.");
                     wait2seconds();
                     System.out.println("Ash nods slowly, deciding to introduce himself calmly. \"N-Name's Ash.. 19 years old.\"");
+                    wait(5);
                     System.out.println("-");
                 } else {
                     System.out.println("He looked at the sharp rim of your knife, shuddering as you pointed it directly at his neck.");
                     System.out.println("\"I's just.. I- Please I ain't.. I'm justa' humble dwella' in here's woods, spare mercy!\"");
-                    Raven.loseFriendship(15);
+                    raven.loseFriendship(15);
                     wait2seconds();
                     System.out.println("\"Lower your Knife! Can't you see he's already helpless?\" Raven looks at you with concern. You lower your knife.");
                     System.out.println("Her faith in your actions dwindle a bit.");
                     wait2seconds();
                     System.out.println("Ash nods slowly, deciding to introduce himself calmly. \"N-Name's Ash.. 19 years old..\"");
+                    wait(5);
                     System.out.println("-");
                 }
             }
@@ -347,13 +356,24 @@ public class Story {
                 userInput = scan.nextLine();
             }
             System.out.println("Ash nods at your agreement. \"Wise choice! Well, c'mon now, we'll head at daybreak. We pack then.\"");
+            System.out.println("-");
+            waitADangSecond();
+            System.out.println("Before going to bed, you search the premises for any luck.");
             wait2seconds();
+            island.randomItemFound();
+            System.out.println("Current Inv: " + PilotPlayer.getInv());
+            wait(3);
+            System.out.println("-");
             cleared = true;
         } // while code's semicolon
         System.out.println("~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
         wait2seconds();
         System.out.println("PART 2 COMPLETED.");
-        if (Raven.getFriendship() >= 30) {
+        System.out.println("Your Current Health: " + pilot.getHealth());
+        System.out.println("Raven's Current Health: " + raven.getRHealth());
+        System.out.println("Current Inv: " + PilotPlayer.getInv());
+        wait(4);
+        if (raven.getFriendship() >= 30) {
             Raven.setHide();
             System.out.println("Another consideration to note:");
             wait2seconds();
@@ -385,6 +405,8 @@ public class Story {
         System.out.println("File saved. Starting next part..");
         wait2seconds();
         cleared = false;
+        StoryPart2 storyContinued = new StoryPart2(pilot.getHealth(), PilotPlayer.getInvList(), raven.getRHealth());
+        storyContinued.start2();
         ConsoleUtility.clearScreen();
     }
 }

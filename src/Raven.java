@@ -1,7 +1,7 @@
 public class Raven {
-    private int friendship;
+    private int friendship; //disregard in Part2 class.
     private int health;
-    private boolean hide;
+    private static boolean hide;
 
     public Raven () {
         this.hide = false;
@@ -23,11 +23,11 @@ public class Raven {
         return friendship;
     }
 
-    public boolean getHide () {
+    public static boolean getHide () {
         return hide;
     }
 
-    public void setHide () {
+    public static void setHide () {
         hide = true;
     }
 

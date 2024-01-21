@@ -14,6 +14,12 @@ public class PilotPlayer {
         }
     }
 
+    public PilotPlayer (int health, String[] newInv) { //use only for StoryPart2 class.
+        this.health = health;
+        inv = new String[4];
+        inv = newInv; //now the pilot's current inv from Story class is restored to Story Part 2 to preserve progress. Please test.
+    }
+
     public PilotPlayer () {
         this.health = 70; //max 100
         inv = new String[4];
@@ -36,8 +42,15 @@ public class PilotPlayer {
         return str;
     }
 
+    public static String[] getInvList () {
+        return inv;
+    }
+
     public void loseHealth (int loss) {
         health -= loss;
+        if (health <= 0) {
+            health = 0;
+        }
     }
 
     public void addHealth (int add) {
