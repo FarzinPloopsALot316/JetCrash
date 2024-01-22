@@ -615,5 +615,78 @@ public class StoryPart2 {
         System.out.println("File saved. Starting final ending...");
         wait(3);
         ConsoleUtility.clearScreen();
+        //ending AHFEUIOEKJFHGUYIEWHADJKLSNLUW3IEAHFKJSCNUQLIEKWJHSVanyway
+        System.out.println("For hours, the two of you crawl through the long, claustraphobic pathway.");
+        wait(3);
+        System.out.println("Raven suddenly stops. She breaks down in tears.");
+        System.out.println("\"I just.. wanted to see my dad. Why...\" her voice hitched for a second.");
+        System.out.println("\"Why did he have to die.. Why did we have to go through all of this..\"");
+        wait2seconds();
+        System.out.println("- Press q to comfort -");
+        userInput = "";
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println("You try to comfort her with words. \"Raven, I-\"");
+        wait2seconds();
+        System.out.println("\"THIS IS UNFAIR! THIS IS UNFAIR!!\" She kept smacking your broad shoulders in blinded rage, taking it all out with screams and wails.");
+        System.out.println("But you know she wasn't mad at you. Just mad at everybody and everything that got you two here in the first place.");
+        System.out.println("- Press q to comfort -");
+        userInput = "";
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println("You hug her, embracing her with your warmth as she sobbed.");
+        System.out.println("Nobody but the walls heard her cries, as they echoed and heaved, her misery in vain.");
+        wait(4);
+        System.out.println("She held the plushie Ash had given her, before tucking it away again. She wiped her tears.");
+        if (raven2.getFriendship() > 40) {
+            System.out.println("She held your hand through the embrace. \"You're the best pilot friend anybody could ever have.\"");
+            System.out.println("- Press q to continue -");
+            userInput = "";
+            while (!userInput.equals("q")) {
+                userInput = scan.nextLine();
+            }
+            System.out.println("You said your name was David Maystonford, I believe.");
+            wait(3);
+            System.out.println("\"I owe you a lot, Mr. Maystonford.\"");
+            System.out.println("You smile sweetly, wiping her tears. \"C'mon, let's go.\"");
+        } else {
+            System.out.println("Thank you, sir..");
+            System.out.println("You nod assuringly. \"C'mon, let's go.\"");
+        }
+        System.out.println("- Press q to continue -");
+        userInput = "";
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println("~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
+        System.out.println("You reach the other side, thinking you were a safe distance from them.");
+        wait(2);
+        System.out.println("However, you notice a rifle aimed at your head. The same was for Raven the moment you two crawled out.");
+        System.out.println("They have gotten to you and Raven. There was nothing to do as you stared into the rim of their guns.");
+        System.out.println("About 5 men or so, remaining from last night, surrounded you two");
+        wait(4);
+        System.out.println("\"WE GOT THEM, PREPARE FOR FIRE.\" The rest of them cocked their guns and pointed it at you two.");
+        System.out.println("- Press q to accept death -");
+        userInput = "";
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println(" - ");
+        System.out.println("\"FIRE IN 3\"...");
+        wait2seconds();
+        System.out.println("\"FIRE IN 2\"...");
+        wait2seconds();
+        System.out.println("\"FIRE IN 1\"...");
+        wait(4);
+        System.out.println("Suddenly, gunfire rained, but not over you two.");
+        System.out.println("A recuse helicopter flew above! A rope was lowered as the remaining 5 men were shot to death from above.");
+        System.out.println("- Press q to climb the rope with Raven -");
+        userInput = "";
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println("You climb the rope. You and Raven sit together in the helicopter as you flew into the distance");
     }
 }
