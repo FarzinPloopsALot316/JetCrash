@@ -392,8 +392,8 @@ public class StoryPart2 {
                             System.out.print("b. Try to dodge, then charge with your knife.");
                             userInput = scan.nextLine();
                             if (userInput.equals("a")) { //if user chooses to fire
-                                int success = (int) ((Math.random() * 4) * 1);
-                                int rHurt = (int) ((Math.random() * 4) * 1);
+                                int success = (int) ((Math.random() * 3) * 1);
+                                int rHurt = (int) ((Math.random() * 3) * 1);
                                 if (success == 1) {
                                     System.out.println("You missed! The assassin shot you and ran away. You lose 20 health and 5 ammo.");
                                     if (rHurt == 1) {
@@ -417,8 +417,8 @@ public class StoryPart2 {
                                     System.out.println("Ammo: " + ammo);
                                 }
                             } else { //if user chooses to use knife
-                                int success = (int) ((Math.random() * 4) * 1);
-                                int rHurt = (int) ((Math.random() * 4) * 1);
+                                int success = (int) ((Math.random() * 3) * 1);
+                                int rHurt = (int) ((Math.random() * 3) * 1);
                                 if (success == 1) {
                                     System.out.println("You missed! The assassin stabbed you and ran away. You lose 25 health.");
                                     pilot2.loseHealth(25);
@@ -435,8 +435,8 @@ public class StoryPart2 {
                             System.out.print("b. Try to dodge");
                             userInput = scan.nextLine();
                             if (userInput.equals("a")) { //if user chooses to attack
-                                int success = (int) ((Math.random() * 4) * 1);
-                                int rHurt = (int) ((Math.random() * 4) * 1);
+                                int success = (int) ((Math.random() * 3) * 1);
+                                int rHurt = (int) ((Math.random() * 3) * 1);
                                 if (success == 1) {
                                     System.out.println("You missed! The assassin stabbed you and ran away. You lose 20 health.");
                                     pilot2.loseHealth(20);
@@ -448,8 +448,8 @@ public class StoryPart2 {
                                     System.out.println("You successfully stabbed the assassin to death!");
                                 }
                             } else { //if user chooses to dodge completely
-                                int success = (int) ((Math.random() * 4) * 1);
-                                int rHurt = (int) ((Math.random() * 4) * 1);
+                                int success = (int) ((Math.random() * 3) * 1);
+                                int rHurt = (int) ((Math.random() * 3) * 1);
                                 if (success == 1) {
                                     System.out.println("You tried! The assassin stabbed you and ran away. You lose 20 health.");
                                     pilot2.loseHealth(20);
@@ -653,7 +653,7 @@ public class StoryPart2 {
             System.out.println("\"I owe you a lot, Mr. Maystonford.\"");
             System.out.println("You smile sweetly, wiping her tears. \"C'mon, let's go.\"");
         } else {
-            System.out.println("Thank you, sir..");
+            System.out.println("\"Thank you, sir..\"");
             System.out.println("You nod assuringly. \"C'mon, let's go.\"");
         }
         System.out.println("- Press q to continue -");
