@@ -700,7 +700,7 @@ public class StoryPart2 {
         System.out.println("~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
         wait(10);
         System.out.println(ConsoleUtility.CYAN + "Thank you for playing Jet Crash! Farewell, pilot!");
-        System.out.println(ConsoleUtility.CYAN + "Feel free to check your history by scrolling up through the terminal!");
+        System.out.println(ConsoleUtility.CYAN + "Now, feel free to check your history by scrolling up through the terminal!");
         wait(20);
     }
 }

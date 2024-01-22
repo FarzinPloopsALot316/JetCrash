@@ -36,7 +36,15 @@ public class Story {
         ConsoleUtility.clearScreen();
         Scanner scan = new Scanner(System.in);
         System.out.println(ConsoleUtility.CYAN +"Welcome to Jet Crash! Have fun!");
-        wait(3);
+        System.out.println(ConsoleUtility.RED + "Make sure all input is lowercased, and play carefully, selecting the proper descisions you believe will help.");
+        System.out.println(ConsoleUtility.RED + "To ensure screen clearing functions properly, do not scroll up in the terminal. To fix this, scroll all the way down again." + ConsoleUtility.CYAN);
+        System.out.println("- Press q to begin game. -");
+        String start = "";
+        while (!start.equals("q")) {
+            start = scan.nextLine();
+        }
+        System.out.println(" - ");
+        waitADangSecond();
         System.out.println("Starting Game...");
         wait2seconds();
         ConsoleUtility.clearScreen();
