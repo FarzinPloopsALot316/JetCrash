@@ -80,8 +80,8 @@ public class Story {
         ConsoleUtility.clearScreen();
         boolean cleared = false;
         while (pilot.getHealth() > 0 && raven.getRHealth() > 0 && !cleared) {
-            PilotPlayer.addItem(ConsoleUtility.YELLOW + "pocket knife");
-            System.out.println("Your Current Health: " + pilot.getHealth());
+            PilotPlayer.addItem("pocket knife");
+            System.out.println(ConsoleUtility.YELLOW + "Your Current Health: " + pilot.getHealth());
             System.out.println("Raven's Current Health: " + raven.getRHealth());
             System.out.println("You searched the premises.");
             wait2seconds();
@@ -197,9 +197,9 @@ public class Story {
                 System.out.println(ConsoleUtility.YELLOW + "Current Inv: " + PilotPlayer.getInv() + ConsoleUtility.CYAN);
                 alreadyTried++;
             } else if (userInput.equals("q") && alreadyTried >= 1) {
-                System.out.println("You already tried hunting once!");
-            } else {
-                System.out.println("Hunt attempt concluded.");
+                System.out.println(ConsoleUtility.CYAN + "You already tried hunting once!");
+            } else if (!PilotPlayer.hasItem("shotgun")) {
+                System.out.println(ConsoleUtility.CYAN + "You do not have a shotgun.");
             }
         }
         System.out.println("SAVING GAME...");
@@ -394,12 +394,12 @@ public class Story {
             userInput = scan.nextLine();
             if (PilotPlayer.hasItem("shotgun") && userInput.equals("q") && alreadyTried < 1) {
                 System.out.println(island.hunt());
-                System.out.println("Current Inv: " + PilotPlayer.getInv());
+                System.out.println(ConsoleUtility.YELLOW + "Current Inv: " + PilotPlayer.getInv() + ConsoleUtility.CYAN);
                 alreadyTried++;
             } else if (userInput.equals("q") && alreadyTried >= 1) {
-                System.out.println("You already tried hunting once!");
-            } else {
-                System.out.println("Hunt attempt concluded.");
+                System.out.println(ConsoleUtility.CYAN + "You already tried hunting once!");
+            } else if (!PilotPlayer.hasItem("shotgun")) {
+                System.out.println(ConsoleUtility.CYAN + "You do not have a shotgun.");
             }
         }
         System.out.println("SAVING GAME...");

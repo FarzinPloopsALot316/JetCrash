@@ -699,7 +699,8 @@ public class StoryPart2 {
         System.out.println("The helicopter flies away, and thus the story of Raven and her pilot ends happily ever after.");
         System.out.println("~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
         wait(10);
-        System.out.println("Thank you for playing Jet Crash! Farewell, pilot!");
+        System.out.println(ConsoleUtility.CYAN + "Thank you for playing Jet Crash! Farewell, pilot!");
+        System.out.println(ConsoleUtility.CYAN + "Feel free to check your history by scrolling up through the terminal!");
         wait(20);
     }
 }

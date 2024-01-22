@@ -39,7 +39,7 @@ public class PilotPlayer {
         for (int i = 0; i < inv.length; i++) {
             str += inv[i] + " | ";
         }
-        return str;
+        return ConsoleUtility.YELLOW + str;
     }
 
     public static String[] getInvList () {
