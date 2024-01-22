@@ -580,10 +580,40 @@ public class StoryPart2 {
             wait2seconds();
             System.out.println("\"Y'all's.. y'all's the bravest two I've ever met...\"");
             System.out.println("Raven stuttered. \"C'mon Ash.. let's go! C'mon-\"");
+            wait(6);
             System.out.println("He didn't respond. His eyes blankly stared into the underground shed's ceiling.");
+            wait2seconds();
+            System.out.println("His body went limp. His mouth hung open, his chest no longer heaving weary breaths.");
+            waitADangSecond();
+            System.out.println("Raven let out a few tears. In respect, she shut his eyes to let him rest.");
+            System.out.println("- Press q to continue -");
+            userInput = "";
+            while (!userInput.equals("q")) {
+                userInput = scan.nextLine();
+            }
+            System.out.println(" - ");
+            System.out.println("You salute to Ash in respect, a tear running down your face as well.");
+            wait(4);
+            System.out.println(" - ");
+            System.out.println("And so, you open the vent gate, leaving Ash behind as you and Raven crawled through the pathway.");
+            System.out.println("The assassins were still right outside. Hurredly, you cover the entrance behind you, and lead way to safety.");
             cleared = true;
+            System.out.println("~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
         } // while code's bracket
         wait(4);
         System.out.println("PART 3 COMPLETED.");
+        wait(2);
+        System.out.println("YOU HAVE COMPLETED THE STORY.");
+        System.out.println("Inventory and health stats are no longer required. Press \"q\" to initiate epilogue ending.");
+        userInput = "";
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println(" - ");
+        System.out.println("SAVING GAME...");
+        wait2seconds();
+        System.out.println("File saved. Starting final ending...");
+        wait(3);
+        ConsoleUtility.clearScreen();
     }
 }
