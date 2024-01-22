@@ -407,7 +407,7 @@ public class Story {
         System.out.println("File saved. Starting next part..");
         wait2seconds();
         cleared = false;
-        StoryPart2 storyContinued = new StoryPart2(pilot.getHealth(), PilotPlayer.getInvList(), raven.getRHealth());
+        StoryPart2 storyContinued = new StoryPart2(pilot.getHealth(), PilotPlayer.getInvList(), raven.getRHealth(), Raven.getHide());
         storyContinued.start2();
         ConsoleUtility.clearScreen();
     }

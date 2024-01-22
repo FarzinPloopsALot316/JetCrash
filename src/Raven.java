@@ -11,8 +11,14 @@ public class Raven {
 
     public Raven (int health) {
         this.hide = false;
-        this.health = health;
+        this.health = 60;
         this.friendship = 10;
+    }
+
+    public Raven (int health, boolean trust) {
+        this.hide = false;
+        this.health = health;
+        hide = trust;
     }
 
     public int getRHealth () {

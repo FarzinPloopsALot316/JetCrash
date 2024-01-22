@@ -4,9 +4,9 @@ public class StoryPart2 {
     PilotPlayer pilot2;
     Raven raven2;
 
-    public StoryPart2(int currentHealth, String[] currentInv, int RCurrentHealth) {
+    public StoryPart2(int currentHealth, String[] currentInv, int RCurrentHealth, boolean trust) {
         pilot2 = new PilotPlayer(currentHealth, currentInv);
-        raven2 = new Raven(RCurrentHealth);
+        raven2 = new Raven(RCurrentHealth, trust); //I just realized friendship is required for the ending.
     }
 
     public void wait(int seconds) {
@@ -405,7 +405,7 @@ public class StoryPart2 {
                                     System.out.println("Ammo: " + ammo);
                                 } else if (ammo <= 0) {
                                     System.out.println("Uh oh! Did you forget you're out of ammo? Yikes!");
-                                    System.out.println("You missed! The assassin shot you and ran away. You lose 10 health.");
+                                    System.out.println("You missed! The assassin shot you and ran away. You lose 20 health.");
                                     pilot2.loseHealth(20);
                                     if (rHurt == 1) {
                                         System.out.println("The assassin attacks Raven too! She inflicts 10 damage!");
@@ -549,8 +549,9 @@ public class StoryPart2 {
             System.out.println("\"This is Blue Cross Aerial Emergency Personnel.\" A voice on the reciever's radio crackled.");
             System.out.println("You jumped up in hope at the response. \"Pilot 789, requesting medical and backup assistance! Urgent!\"");
             wait(3);
-            System.out.println("Pilot 789, is that y-!.. Very well. Help is on the way. Keep the GPS on you.");
+            System.out.println("\"Pilot 789, is that y-!.. Very well. Help is on the way. Keep the GPS on you.\"");
             System.out.println("The radio shut off.");
+            System.out.println("- Press q to continue -");
             userInput = "";
             while (!userInput.equals("q")) {
                 userInput = scan.nextLine();
@@ -640,7 +641,7 @@ public class StoryPart2 {
         System.out.println("Nobody but the walls heard her cries, as they echoed and heaved, her misery in vain.");
         wait(4);
         System.out.println("She held the plushie Ash had given her, before tucking it away again. She wiped her tears.");
-        if (raven2.getFriendship() > 40) {
+        if (Raven.getHide()) {
             System.out.println("She held your hand through the embrace. \"You're the best pilot friend anybody could ever have.\"");
             System.out.println("- Press q to continue -");
             userInput = "";
@@ -687,7 +688,7 @@ public class StoryPart2 {
         while (!userInput.equals("q")) {
             userInput = scan.nextLine();
         }
-        System.out.println("You climb the rope. You and Raven sit together in the helicopter as you flew into the distance");
+        System.out.println("You climb the rope. You and Raven sit together in the helicopter as you flew into the distance.");
         wait(5);
         ConsoleUtility.clearScreen();
         System.out.println("And so your story comes to an end. You look out the helicopter's window, Raven watching with you.");
@@ -699,6 +700,6 @@ public class StoryPart2 {
         System.out.println("~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
         wait(10);
         System.out.println("Thank you for playing Jet Crash! Farewell, pilot!");
-        wait2seconds();
+        wait(20);
     }
 }
