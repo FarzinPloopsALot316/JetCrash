@@ -35,12 +35,12 @@ public class Story {
     public void start() { //entire story line takes place here
         ConsoleUtility.clearScreen();
         Scanner scan = new Scanner(System.in);
-        System.out.println("Welcome to Jet Crash! Have fun!");
+        System.out.println(ConsoleUtility.CYAN +"Welcome to Jet Crash! Have fun!");
         wait(3);
         System.out.println("Starting Game...");
         wait2seconds();
         ConsoleUtility.clearScreen();
-        System.out.println("A lonely, rich girl who sits upon her castle for years, looking about the horizon, feels a great sense of solitude, yearning to see her father.");
+        System.out.println(ConsoleUtility.PURPLE + "A lonely, rich girl who sits upon her castle for years, looking about the horizon, feels a great sense of solitude, yearning to see her father.");
         System.out.println("She is the daughter of a rich father who owns a flourishing fashion business, but her father has no business with the likes of her. ");
         System.out.println("For more than 19 years, she lived in a lonely castle her father had built to keep her away, with butlers and maids only to comfort her company.");
         System.out.println("But one day, her father calls her, telling her that he must soon retire, and that it is about time the company be led by a newer generation.");
@@ -55,8 +55,8 @@ public class Story {
         System.out.println("Your goal is to complete this story while keeping both yourself and your client, Raven, protected.");
         System.out.println("~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
         wait(8);
-        System.out.println("Your Current Health: " + pilot.getHealth());
-        System.out.println("Raven's Current Health: " + raven.getRHealth());
+        System.out.println(ConsoleUtility.YELLOW +"Your Current Health: " + pilot.getHealth());
+        System.out.println("Raven's Current Health: " + raven.getRHealth() + ConsoleUtility.PURPLE);
         System.out.println("-");
         waitADangSecond();
         System.out.println("\"Oh no, where are we?!\" Raven exclaims. ");
@@ -80,13 +80,13 @@ public class Story {
         ConsoleUtility.clearScreen();
         boolean cleared = false;
         while (pilot.getHealth() > 0 && raven.getRHealth() > 0 && !cleared) {
-            PilotPlayer.addItem("pocket knife");
+            PilotPlayer.addItem(ConsoleUtility.YELLOW + "pocket knife");
             System.out.println("Your Current Health: " + pilot.getHealth());
             System.out.println("Raven's Current Health: " + raven.getRHealth());
             System.out.println("You searched the premises.");
             wait2seconds();
             island.randomItemFound();
-            System.out.println("Current Inv: " + PilotPlayer.getInv());
+            System.out.println("Current Inv: " + PilotPlayer.getInv() + ConsoleUtility.PURPLE);
             wait2seconds();
             System.out.println("-");
             System.out.println("The two of you wander into the forest, and you both look around. After a few minutes of searching the tropical vast, you spot a fruit tree.");
@@ -119,7 +119,7 @@ public class Story {
             System.out.println("Suddenly, a rustling could be heard in the bushes.");
             waitADangSecond();
             System.out.println("You and Raven widen your eyes in shock as you see a giant bear emerge, ready to pounce upon attack. What do you do?");
-            System.out.println("Current Inv: " + PilotPlayer.getInv());
+            System.out.println(ConsoleUtility.YELLOW +"Current Inv: " + PilotPlayer.getInv() + ConsoleUtility.PURPLE);
             System.out.println("a. Try to fight the bear.");
             System.out.print("b. Take Raven and run.");
             if (PilotPlayer.hasItem("gun") || PilotPlayer.hasItem("shotgun")) {
@@ -181,10 +181,10 @@ public class Story {
         } // while code's semicolon
         System.out.println("~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
         wait2seconds();
-        System.out.println("PART 1 COMPLETED.");
+        System.out.println(ConsoleUtility.CYAN + "PART 1 COMPLETED." + ConsoleUtility.YELLOW);
         System.out.println("Your Current Health: " + pilot.getHealth());
         System.out.println("Raven's Current Health: " + raven.getRHealth());
-        System.out.println("Current Inv: " + PilotPlayer.getInv());
+        System.out.println("Current Inv: " + PilotPlayer.getInv() + ConsoleUtility.CYAN);
         wait(4);
         System.out.println("Play next part? \"yes\" to continue.");
         System.out.println("You can also try hunting (requires shotgun) to get deer meat, which recovers health. Press q to do so.");
@@ -194,7 +194,7 @@ public class Story {
             userInput = scan.nextLine();
             if (PilotPlayer.hasItem("shotgun") && userInput.equals("q") && alreadyTried < 1) {
                 System.out.println(island.hunt());
-                System.out.println("Current Inv: " + PilotPlayer.getInv());
+                System.out.println(ConsoleUtility.YELLOW + "Current Inv: " + PilotPlayer.getInv() + ConsoleUtility.CYAN);
                 alreadyTried++;
             } else if (userInput.equals("q") && alreadyTried >= 1) {
                 System.out.println("You already tried hunting once!");
@@ -209,9 +209,9 @@ public class Story {
         cleared = false;
         ConsoleUtility.clearScreen();
         while (pilot.getHealth() > 0 && raven.getRHealth() > 0 && !cleared) {
-            System.out.println("Your Current Health: " + pilot.getHealth());
+            System.out.println(ConsoleUtility.YELLOW + "Your Current Health: " + pilot.getHealth());
             System.out.println("Raven's Current Health: " + raven.getRHealth());
-            System.out.println("Current Inv: " + PilotPlayer.getInv());
+            System.out.println("Current Inv: " + PilotPlayer.getInv() + ConsoleUtility.PURPLE);
             System.out.println("You two decide to stay in the cave for at least a week. You kept Raven company as you worked on trying to repair the GPS you found from the plane wreck.");
             wait(4);
             System.out.println("~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
@@ -363,17 +363,17 @@ public class Story {
             System.out.println("Before going to bed, you search the premises for any luck.");
             wait2seconds();
             island.randomItemFound();
-            System.out.println("Current Inv: " + PilotPlayer.getInv());
+            System.out.println(ConsoleUtility.YELLOW + "Current Inv: " + PilotPlayer.getInv() + ConsoleUtility.PURPLE);
             wait(3);
             System.out.println("-");
             cleared = true;
         } // while code's semicolon
         System.out.println("~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
         wait2seconds();
-        System.out.println("PART 2 COMPLETED.");
+        System.out.println(ConsoleUtility.CYAN + "PART 2 COMPLETED." + ConsoleUtility.YELLOW);
         System.out.println("Your Current Health: " + pilot.getHealth());
         System.out.println("Raven's Current Health: " + raven.getRHealth());
-        System.out.println("Current Inv: " + PilotPlayer.getInv());
+        System.out.println("Current Inv: " + PilotPlayer.getInv() + ConsoleUtility.CYAN);
         wait(4);
         if (raven.getFriendship() >= 30) {
             Raven.setHide();
@@ -387,7 +387,7 @@ public class Story {
         }
         System.out.println("Play next part? \"yes\" to continue.");
         System.out.println("You can also try hunting (requires shotgun) to get deer meat, which recovers health. Press q to do so.");
-        System.out.println("Current Inv: " + PilotPlayer.getInv());
+        System.out.println(ConsoleUtility.YELLOW + "Current Inv: " + PilotPlayer.getInv() + ConsoleUtility.CYAN);
         userInput = "";
         alreadyTried = 0;
         while (!userInput.equals("yes")) {
@@ -406,7 +406,6 @@ public class Story {
         wait2seconds();
         System.out.println("File saved. Starting next part..");
         wait2seconds();
-        cleared = false;
         StoryPart2 storyContinued = new StoryPart2(pilot.getHealth(), PilotPlayer.getInvList(), raven.getRHealth(), Raven.getHide());
         storyContinued.start2();
         ConsoleUtility.clearScreen();

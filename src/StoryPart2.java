@@ -39,15 +39,15 @@ public class StoryPart2 {
         Scanner scan = new Scanner(System.in);
         String userInput = "";
         while (!cleared) {
-            System.out.println("You, Raven, and Ash walk to his cabin.");
+            System.out.println(ConsoleUtility.PURPLE + "You, Raven, and Ash walk to his cabin.");
             System.out.println("Upon arriving after about 35 minutes, you and Raven admire the natural tranquility of the abode.");
             System.out.println("The cabin seemed lonely, accompanied by none other than Ash and the green willow trees which coveted the mass of its wooden exterior.");
             System.out.println("You decide to set your belongings aside on the couch inside, sitting down next to Raven.");
             wait(8);
             System.out.println("~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
-            System.out.println("Your Current Health: " + pilot2.getHealth());
+            System.out.println(ConsoleUtility.YELLOW + "Your Current Health: " + pilot2.getHealth());
             System.out.println("Raven's Current Health: " + raven2.getRHealth());
-            System.out.println("Current Inv: " + PilotPlayer.getInv());
+            System.out.println("Current Inv: " + PilotPlayer.getInv() + ConsoleUtility.PURPLE);
             waitADangSecond();
             if (PilotPlayer.hasItem("berries")) {
                 System.out.println("You had berries from before, and figured to use them before they went rotten.");
@@ -59,13 +59,13 @@ public class StoryPart2 {
                     pilot2.addHealth(10);
                     wait2seconds();
                     System.out.println(PilotPlayer.removeItem("berries"));
-                    System.out.println("Current Inv: " + PilotPlayer.getInv());
+                    System.out.println(ConsoleUtility.YELLOW + "Current Inv: " + PilotPlayer.getInv() + ConsoleUtility.PURPLE);
                 } else {
                     System.out.println("Raven smiles in joy, gaining 10 health upon consumption.");
                     raven2.ravenAddHealth(10);
                     wait2seconds();
                     System.out.println(PilotPlayer.removeItem("berries"));
-                    System.out.println("Current Inv: " + PilotPlayer.getInv());
+                    System.out.println(ConsoleUtility.YELLOW + "Current Inv: " + PilotPlayer.getInv() + ConsoleUtility.PURPLE);
                 }
             }
             if (PilotPlayer.hasItem("bear meat") || PilotPlayer.hasItem("deer meat")) { //meat gives 15 each
@@ -80,13 +80,13 @@ public class StoryPart2 {
                         pilot2.addHealth(15);
                         wait2seconds();
                         System.out.println(PilotPlayer.removeItem("bear meat"));
-                        System.out.println("Current Inv: " + PilotPlayer.getInv());
+                        System.out.println(ConsoleUtility.YELLOW + "Current Inv: " + PilotPlayer.getInv() + ConsoleUtility.PURPLE);
                     } else {
                         System.out.println("Raven smiles in joy, gaining 15 health upon consumption.");
                         raven2.ravenAddHealth(15);
                         wait2seconds();
                         System.out.println(PilotPlayer.removeItem("bear meat"));
-                        System.out.println("Current Inv: " + PilotPlayer.getInv());
+                        System.out.println(ConsoleUtility.YELLOW + "Current Inv: " + PilotPlayer.getInv() + ConsoleUtility.PURPLE);
                     }
                 }
                 if (PilotPlayer.hasItem("deer meat")) {
@@ -99,13 +99,13 @@ public class StoryPart2 {
                         pilot2.addHealth(15);
                         wait2seconds();
                         System.out.println(PilotPlayer.removeItem("deer meat"));
-                        System.out.println("Current Inv: " + PilotPlayer.getInv());
+                        System.out.println(ConsoleUtility.YELLOW + "Current Inv: " + PilotPlayer.getInv() + ConsoleUtility.PURPLE);
                     } else {
                         System.out.println("Raven smiles in joy, gaining 15 health upon consumption.");
                         raven2.ravenAddHealth(15);
                         wait2seconds();
                         System.out.println(PilotPlayer.removeItem("deer meat"));
-                        System.out.println("Current Inv: " + PilotPlayer.getInv());
+                        System.out.println(ConsoleUtility.YELLOW + "Current Inv: " + PilotPlayer.getInv() + ConsoleUtility.PURPLE);
                     }
                 }
             }
@@ -278,9 +278,9 @@ public class StoryPart2 {
                     System.out.println("Raven, whose trust you hold, hides behind you, completely shielded from the 8 assassins as you fought.");
                     for (int count = 1; count <= 8; count++) {
                         System.out.println("--------------------------- ROUND " + count + " --------------------------");
-                        System.out.println("Your Current Health: " + pilot2.getHealth());
+                        System.out.println(ConsoleUtility.YELLOW + "Your Current Health: " + pilot2.getHealth());
                         System.out.println("Raven's Current Health: " + raven2.getRHealth());
-                        System.out.println("Current Inv: " + PilotPlayer.getInv());
+                        System.out.println("Current Inv: " + PilotPlayer.getInv() + ConsoleUtility.PURPLE);
                         System.out.println(" - ");
                         wait(5);
                         System.out.println("Assassin " + count + " encountered!");
@@ -380,9 +380,9 @@ public class StoryPart2 {
                 } else { //for if raven cannot hide
                     for (int count = 1; count <= 8; count++) {
                         System.out.println("--------------------------- ROUND " + count + " --------------------------");
-                        System.out.println("Your Current Health: " + pilot2.getHealth());
+                        System.out.println(ConsoleUtility.YELLOW + "Your Current Health: " + pilot2.getHealth());
                         System.out.println("Raven's Current Health: " + raven2.getRHealth());
-                        System.out.println("Current Inv: " + PilotPlayer.getInv());
+                        System.out.println("Current Inv: " + PilotPlayer.getInv() + ConsoleUtility.PURPLE);
                         System.out.println(" - ");
                         wait(5);
                         System.out.println("Assassin " + count + " encountered!");
@@ -506,7 +506,7 @@ public class StoryPart2 {
                 } // end of entire battle sequence
                 complete = true;
             } //battle while code's bracket, do note you're still running to the shed
-            System.out.println("You successfully made it through! You died " + deathCount + " times!");
+            System.out.println(ConsoleUtility.PURPLE + "You successfully made it through! You died " + ConsoleUtility.RED + deathCount + ConsoleUtility.PURPLE + " times!");
             System.out.println("--------------------------- FINISHED BATTLE --------------------------");
             System.out.println("Ash leads you and Raven to the shed on time, jamming the door shut behind him with a chair. He pushed over a shelf to barricade further.");
             System.out.println("You notice a secret trap door leading to the basement of this particular shed. You remove the boxes and furniture on top.");
@@ -602,7 +602,7 @@ public class StoryPart2 {
             System.out.println("~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
         } // while code's bracket
         wait(4);
-        System.out.println("PART 3 COMPLETED.");
+        System.out.println(ConsoleUtility.CYAN + "PART 3 COMPLETED.");
         wait(2);
         System.out.println("YOU HAVE COMPLETED THE STORY.");
         System.out.println("Inventory and health stats are no longer required. Press \"q\" to initiate epilogue ending.");
@@ -617,7 +617,7 @@ public class StoryPart2 {
         wait(3);
         ConsoleUtility.clearScreen();
         //ending AHFEUIOEKJFHGUYIEWHADJKLSNLUW3IEAHFKJSCNUQLIEKWJHSVanyway
-        System.out.println("For hours, the two of you crawl through the long, claustraphobic pathway.");
+        System.out.println(ConsoleUtility.BLUE + "For hours, the two of you crawl through the long, claustraphobic pathway.");
         wait(3);
         System.out.println("Raven suddenly stops. She breaks down in tears.");
         System.out.println("\"I just.. wanted to see my dad. Why...\" her voice hitched for a second.");
