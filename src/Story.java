@@ -4,9 +4,10 @@ public class Story {
     public Raven raven = new Raven(60);
     public Terrain island = new Terrain();
 
-    public Story () {}
+    public Story() {
+    }
 
-    public void wait (int seconds) { // putting it into a separate method because im tired of typing this out
+    public void wait(int seconds) { // putting it into a separate method because im tired of typing this out
         seconds *= 1000;
         try {
             Thread.sleep(seconds);
@@ -15,7 +16,7 @@ public class Story {
         }
     }
 
-    public void wait2seconds () { // putting it into a seperate method because im tired of typing this out
+    public void wait2seconds() { // putting it into a seperate method because im tired of typing this out
         try {
             Thread.sleep(2000);  // 2000 milliseconds, or 2 seconds
         } catch (Exception e) {
@@ -23,7 +24,7 @@ public class Story {
         }
     }
 
-    public void waitADangSecond () {
+    public void waitADangSecond() {
         try {
             Thread.sleep(1000);
         } catch (Exception e) {
@@ -31,7 +32,8 @@ public class Story {
         }
     }
 
-    public void start () { //entire story line takes place here
+    public void start() { //entire story line takes place here
+        ConsoleUtility.clearScreen();
         Scanner scan = new Scanner(System.in);
         System.out.println("Welcome to Jet Crash! Have fun!");
         wait(3);
@@ -186,7 +188,7 @@ public class Story {
         wait(4);
         System.out.println("Play next part? \"yes\" to continue.");
         System.out.println("You can also try hunting (requires shotgun) to get deer meat, which recovers health. Press q to do so.");
-        userInput = scan.nextLine();
+        userInput = "";
         int alreadyTried = 0;
         while (!userInput.equals("yes")) {
             userInput = scan.nextLine();
@@ -386,7 +388,7 @@ public class Story {
         System.out.println("Play next part? \"yes\" to continue.");
         System.out.println("You can also try hunting (requires shotgun) to get deer meat, which recovers health. Press q to do so.");
         System.out.println("Current Inv: " + PilotPlayer.getInv());
-        userInput = scan.nextLine();
+        userInput = "";
         alreadyTried = 0;
         while (!userInput.equals("yes")) {
             userInput = scan.nextLine();
