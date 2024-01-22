@@ -199,7 +199,7 @@ public class Story {
             } else if (userInput.equals("q") && alreadyTried >= 1) {
                 System.out.println("You already tried hunting once!");
             } else {
-                System.out.println("You don't have a shotgun.");
+                System.out.println("Hunt attempt concluded.");
             }
         }
         System.out.println("SAVING GAME...");
@@ -399,7 +399,7 @@ public class Story {
             } else if (userInput.equals("q") && alreadyTried >= 1) {
                 System.out.println("You already tried hunting once!");
             } else {
-                System.out.println("You don't have a shotgun.");
+                System.out.println("Hunt attempt concluded.");
             }
         }
         System.out.println("SAVING GAME...");

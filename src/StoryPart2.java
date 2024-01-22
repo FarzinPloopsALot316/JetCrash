@@ -264,7 +264,9 @@ public class StoryPart2 {
             int deathCount = 0;
             boolean complete = false;
             while (!complete) {
+                System.out.println("The can explodes, and fire shoots everywhere, covering a wall between you three and most of the assassins who burned behind it.");
                 System.out.println("Ash lead the two of you to the shed, but suddenly, 8 assassins jump out!");
+                wait2seconds();
                 System.out.println("- Press q to begin battling -");
                 userInput = "";
                 while (!userInput.equals("q")) {
@@ -503,9 +505,82 @@ public class StoryPart2 {
                     } //for loop bracket end
                 } // end of entire battle sequence
                 complete = true;
-            } //battle while code's bracket
-            System.out.println("You successfully made it through!");
+            } //battle while code's bracket, do note you're still running to the shed
+            System.out.println("You successfully made it through! You died " + deathCount + " times!");
             System.out.println("--------------------------- FINISHED BATTLE --------------------------");
+            System.out.println("Ash leads you and Raven to the shed on time, jamming the door shut behind him with a chair. He pushed over a shelf to barricade further.");
+            System.out.println("You notice a secret trap door leading to the basement of this particular shed. You remove the boxes and furniture on top.");
+            wait(5);
+            System.out.println("Ash slumps down against the wall, covering the bullet wound in his stomach. Sadly, one of the assassins got to him.");
+            wait(3);
+            System.out.println("Raven's eyes widened as she watched the blood slowly stain his shirt. \"A-Ash?!..\" she stuttered.");
+            wait(3);
+            System.out.println("You notice his wound and immediately stop to go to his side. You try to pump the wound and stop the blood flow.");
+            wait2seconds();
+            System.out.println("\"N-n-no c'mon n-now fella, you'se know better than.. than to.. try an' fix dis..\" Ash coughed out.");
+            System.out.println("\"You need to get under here's trapdoor, the antennae and GPS is down there! G-go on now.. I'll be behind.\"");
+            System.out.println("- Press q to open underground trapdoor -");
+            userInput = "";
+            while (!userInput.equals("q")) {
+                userInput = scan.nextLine();
+            }
+            System.out.println("You head to the trapdoor and open it.");
+            System.out.println(" - ");
+            wait2seconds();
+            System.out.println("You rush everybody inside, closing the trapdoor above you tight. Raven sits Ash down.");
+            wait2seconds();
+            System.out.println("A light blinks on, and you head to the antennae and GPS on the worktable.");
+            System.out.println("\"Yes that's them!\" Ash heaves out. \"N-Now, pair em..\" He coughs painfully. Raven tries to aid the wound");
+            System.out.println("- Press q to attempt the pair -");
+            userInput = "";
+            while (!userInput.equals("q")) {
+                userInput = scan.nextLine();
+            }
+            System.out.println("You connect the wires. The GPS and the communicators blinks to life, and you immediately try to contact an emergency crew in America");
+            System.out.println(" - ");
+            wait(4);
+            System.out.println("\"Hello, Emergency Personnel requested. Respond.\" No response. \"Hello? HELLO?!\"");
+            System.out.println("You slam the table in frustration. The assassins were already on their way to you, about to search the shed entrance.");
+            wait2seconds();
+            System.out.println("Raven look at you with worry, holding the tiny plushie from before to her heart.");
+            System.out.println("She sat by Ash, who groaned in pain.");
+            System.out.println("Suddenly...");
+            wait(6);
+            System.out.println("\"This is Blue Cross Aerial Emergency Personnel.\" A voice on the reciever's radio crackled.");
+            System.out.println("You jumped up in hope at the response. \"Pilot 789, requesting medical and backup assistance! Urgent!\"");
+            wait(3);
+            System.out.println("Pilot 789, is that y-!.. Very well. Help is on the way. Keep the GPS on you.");
+            System.out.println("The radio shut off.");
+            userInput = "";
+            while (!userInput.equals("q")) {
+                userInput = scan.nextLine();
+            }
+            System.out.println("Ash grimaced in pain, but he smiled. \"You'se done it.. N-now.. head on through that vent gate...\"");
+            System.out.println("He points to a \"ventilation\" pathway. But you eye his wound, concerned.");
+            System.out.println("- Press q to continue -");
+            userInput = "";
+            while (!userInput.equals("q")) {
+                userInput = scan.nextLine();
+            }
+            System.out.println(" - ");
+            wait(2);
+            System.out.println("Raven shakes her head. \"Ash you're coming, come on!\"");
+            System.out.println("Ash turned to face Raven as he sat against the wall, shaking his head as tears formed through his eyes.");
+            System.out.println("- Press q to continue -");
+            userInput = "";
+            while (!userInput.equals("q")) {
+                userInput = scan.nextLine();
+            }
+            System.out.println(" - ");
+            wait(4);
+            System.out.println("He continued to speak. \"Now you'se been a good girl, Raven, now do as yo' man says...\"");
+            System.out.println("\"You'se gon make it to yo' father! Go on, scurry now!... I's put my faith in y'all\"");
+            wait(3);
+            System.out.println("Raven shook her head in denial. \"Ash, stop joking around! Come on!..\" A sob could be heard straining her voice.");
+            wait2seconds();
+            System.out.println("\"Y'all's.. y'all's the bravest two I've ever met...\"");
+            System.out.println("Raven stuttered. \"C'mon Ash.. let's go! C'mon-\"");
+            System.out.println("He didn't respond. His eyes blankly stared into the underground shed's ceiling.");
             cleared = true;
         } // while code's bracket
         wait(4);
