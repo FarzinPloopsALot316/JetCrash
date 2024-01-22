@@ -688,5 +688,17 @@ public class StoryPart2 {
             userInput = scan.nextLine();
         }
         System.out.println("You climb the rope. You and Raven sit together in the helicopter as you flew into the distance");
+        wait(5);
+        ConsoleUtility.clearScreen();
+        System.out.println("And so your story comes to an end. You look out the helicopter's window, Raven watching with you.");
+        System.out.println("The sun rose over the vast horizon as you watched the island grow smaller and smaller, the helicopter gaining distance.");
+        System.out.println("You could almost see the plane wreckage you began with sitting at the shore, fading away.");
+        System.out.println("Raven waved goodbye, a smile forming on her face as hope seemed to find her yet again.");
+        System.out.println("She looked at you, eternally grateful for your service. She would soon meet her father, and it was all thanks to your effort.");
+        System.out.println("The helicopter flies away, and thus the story of Raven and her pilot ends happily ever after.");
+        System.out.println("~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
+        wait(10);
+        System.out.println("Thank you for playing Jet Crash! Farewell, pilot!");
+        wait2seconds();
     }
 }
